@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A07FE3C2AC5D2DB00C174CD /* MarkdownTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A07FE3B2AC5D2DB00C174CD /* MarkdownTestView.swift */; };
+		7A3569AB2AB372CA0017740C /* LaTeXSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7A3569AA2AB372CA0017740C /* LaTeXSwiftUI */; };
+		7AEA69692AB4BDF60062A0E9 /* LatexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEA69682AB4BDF60062A0E9 /* LatexView.swift */; };
 		9902F2B229571D5D003A2DCC /* ImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9902F2B129571D5D003A2DCC /* ImagesView.swift */; };
 		9902F2B729575183003A2DCC /* ImageProvidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9902F2B629575183003A2DCC /* ImageProvidersView.swift */; };
 		991E39862950A73500A3012A /* QuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E39852950A73500A3012A /* QuotesView.swift */; };
@@ -32,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A07FE3B2AC5D2DB00C174CD /* MarkdownTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownTestView.swift; sourceTree = "<group>"; };
+		7AEA69682AB4BDF60062A0E9 /* LatexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatexView.swift; sourceTree = "<group>"; };
 		9902F2B129571D5D003A2DCC /* ImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesView.swift; sourceTree = "<group>"; };
 		9902F2B629575183003A2DCC /* ImageProvidersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvidersView.swift; sourceTree = "<group>"; };
 		991E39852950A73500A3012A /* QuotesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesView.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				994F5D87295821AF00B2BB51 /* SDWebImageSwiftUI in Frameworks */,
+				7A3569AB2AB372CA0017740C /* LaTeXSwiftUI in Frameworks */,
 				99DE2A2F294D9AFB0025E332 /* MarkdownUI in Frameworks */,
 				99B59C9B29548FCF00390E9B /* Splash in Frameworks */,
 			);
@@ -117,6 +123,8 @@
 				99DE2A40294F8ED70025E332 /* TextStylesView.swift */,
 				99DE2A22294D9A2C0025E332 /* Assets.xcassets */,
 				99DE2A24294D9A2C0025E332 /* Preview Content */,
+				7AEA69682AB4BDF60062A0E9 /* LatexView.swift */,
+				7A07FE3B2AC5D2DB00C174CD /* MarkdownTestView.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -156,6 +164,7 @@
 				99DE2A2E294D9AFB0025E332 /* MarkdownUI */,
 				99B59C9A29548FCF00390E9B /* Splash */,
 				994F5D86295821AF00B2BB51 /* SDWebImageSwiftUI */,
+				7A3569AA2AB372CA0017740C /* LaTeXSwiftUI */,
 			);
 			productName = Demo;
 			productReference = 99DE2A1B294D9A2B0025E332 /* Demo.app */;
@@ -188,6 +197,7 @@
 			packageReferences = (
 				99B59C9929548FCF00390E9B /* XCRemoteSwiftPackageReference "Splash" */,
 				994F5D85295821AF00B2BB51 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				7A3569A92AB372CA0017740C /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */,
 			);
 			productRefGroup = 99DE2A1C294D9A2B0025E332 /* Products */;
 			projectDirPath = "";
@@ -219,6 +229,7 @@
 				991E398A2950B0DF00A3012A /* TablesView.swift in Sources */,
 				99DE2A33294D9E320025E332 /* DemoView.swift in Sources */,
 				991E39862950A73500A3012A /* QuotesView.swift in Sources */,
+				7A07FE3C2AC5D2DB00C174CD /* MarkdownTestView.swift in Sources */,
 				991E39882950A80C00A3012A /* CodeView.swift in Sources */,
 				99B59CA229549AB600390E9B /* CodeSyntaxHighlightView.swift in Sources */,
 				99B59CA02954990B00390E9B /* SplashCodeSyntaxHighlighter.swift in Sources */,
@@ -230,6 +241,7 @@
 				99DE2A1F294D9A2B0025E332 /* DemoApp.swift in Sources */,
 				99DE2A39294E1B700025E332 /* RepositoryReadmeView.swift in Sources */,
 				9902F2B229571D5D003A2DCC /* ImagesView.swift in Sources */,
+				7AEA69692AB4BDF60062A0E9 /* LatexView.swift in Sources */,
 				9902F2B729575183003A2DCC /* ImageProvidersView.swift in Sources */,
 				99939E2D298EC9B500E3337E /* LazyLoadingView.swift in Sources */,
 			);
@@ -360,6 +372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Demo/Preview Content\"";
+				DEVELOPMENT_TEAM = 78RSNDD442;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -373,7 +386,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gonzalezreal.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -389,6 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Demo/Preview Content\"";
+				DEVELOPMENT_TEAM = 78RSNDD442;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -402,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gonzalezreal.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -434,6 +448,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7A3569A92AB372CA0017740C /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/colinc86/LaTeXSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
 		994F5D85295821AF00B2BB51 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
@@ -453,6 +475,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7A3569AA2AB372CA0017740C /* LaTeXSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A3569A92AB372CA0017740C /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */;
+			productName = LaTeXSwiftUI;
+		};
 		994F5D86295821AF00B2BB51 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 994F5D85295821AF00B2BB51 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;

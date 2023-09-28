@@ -46,6 +46,7 @@ struct RepositoryReadmeView_Previews: PreviewProvider {
 
 // MARK: - ReadmeView
 
+@MainActor
 private struct ReadmeView: View {
   let owner: String
   let repo: String
