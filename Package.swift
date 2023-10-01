@@ -1,4 +1,4 @@
-// swift-tools-version:5.7
+// swift-tools-version:5.6
 
 import PackageDescription
 
@@ -6,7 +6,7 @@ let package = Package(
   name: "swift-markdown-ui",
   platforms: [
     .macOS(.v12),
-    .iOS(.v16),
+    .iOS(.v15),
     .tvOS(.v15),
     .watchOS(.v8),
   ],
@@ -19,7 +19,7 @@ let package = Package(
   dependencies: [
     .package(url: "https://github.com/gonzalezreal/NetworkImage", from: "6.0.0"),
     .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.10.0"),
-    .package(url: "https://github.com/colinc86/LaTeXSwiftUI", from: "1.3.0"),
+    .package(url: "https://github.com/conrad030/LaTeXSwiftUI", branch: "iOS15_target"),
   ],
   targets: [
     .target(name: "cmark-gfm"),

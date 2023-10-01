@@ -235,8 +235,12 @@ extension Markdown {
     ///   - imageBaseURL: The base URL to use when resolving Markdown image URLs. If this value is `nil`, the initializer will
     ///                   determine image URLs using the `baseURL` parameter. The default is `nil`.
     @MainActor public init(_ markdown: String, baseURL: URL? = nil, imageBaseURL: URL? = nil) {
-        let markdownImageReplacedString = LatexParser.replaceDollarEnclosedStrings(in: markdown)
-        self.init(MarkdownContent(markdownImageReplacedString), baseURL: baseURL, imageBaseURL: imageBaseURL)
+        if #available(iOS 16, *) {
+            let markdownImageReplacedString = LatexParser.replaceDollarEnclosedStrings(in: markdown)
+            self.init(MarkdownContent(markdownImageReplacedString), baseURL: baseURL, imageBaseURL: imageBaseURL)
+        } else {
+            self.init(MarkdownContent(markdown), baseURL: baseURL, imageBaseURL: imageBaseURL)
+        }
     }
     
     /// Creates a Markdown view composed of any number of blocks.

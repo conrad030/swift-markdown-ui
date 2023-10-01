@@ -8,6 +8,7 @@
 import SwiftUI
 import LaTeXSwiftUI
 
+@available(iOS 16.0, *)
 class LatexParser {
     
     @MainActor
