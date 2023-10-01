@@ -23,19 +23,3 @@ extension AttributeDynamicLookup {
     return self[T.self]
   }
 }
-
-extension AttributedString {
-  func resolvingFonts() -> AttributedString {
-    var output = self
-
-    for run in output.runs {
-      guard let fontProperties = run.fontProperties else {
-        continue
-      }
-      output[run.range].font = .withProperties(fontProperties)
-      output[run.range].fontProperties = nil
-    }
-
-    return output
-  }
-}

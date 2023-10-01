@@ -12,5 +12,5 @@ public protocol InlineImageProvider {
   /// - Parameters:
   ///   - url: The URL of the image to display.
   ///   - label: The accessibility label associated with the image.
-  func image(with url: URL, label: String) async throws -> Image
+  func image(with url: URL, label: String) async throws -> UIImage
 }
