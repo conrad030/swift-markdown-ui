@@ -131,22 +131,3 @@ extension UIFont {
         }
     }
 }
-
-//public static let ultraLight: Font.Weight
-//
-//public static let thin: Font.Weight
-//
-//public static let light: Font.Weight
-//
-//public static let regular: Font.Weight
-//
-//public static let medium: Font.Weight
-//
-//public static let semibold: Font.Weight
-//
-//public static let bold: Font.Weight
-//
-//public static let heavy: Font.Weight
-//
-//public static let black: Font.Weight
-
