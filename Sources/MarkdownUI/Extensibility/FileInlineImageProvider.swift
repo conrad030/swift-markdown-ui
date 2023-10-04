@@ -26,7 +26,7 @@ public struct FileInlineImageProvider: InlineImageProvider {
     
     public func image(with url: URL, label: String) async throws -> UIImage {
         let image = UIImage(contentsOfFile: url.absoluteString) ?? UIImage()
-        try FileManager.default.removeItem(atPath: url.absoluteString)
+//        try FileManager.default.removeItem(atPath: url.absoluteString)
         return image
     }
 }

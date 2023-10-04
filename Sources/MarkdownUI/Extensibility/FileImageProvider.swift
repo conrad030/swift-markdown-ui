@@ -34,7 +34,7 @@ public struct FileImageProvider: ImageProvider {
     
     private func image(url: URL) -> PlatformImage? {
         let image = UIImage(contentsOfFile: url.absoluteString) ?? UIImage()
-        try? FileManager.default.removeItem(atPath: url.absoluteString)
+//        try? FileManager.default.removeItem(atPath: url.absoluteString)
         return image
     }
 }
