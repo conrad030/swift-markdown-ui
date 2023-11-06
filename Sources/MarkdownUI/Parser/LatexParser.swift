@@ -12,7 +12,7 @@ import LaTeXSwiftUI
 class LatexParser {
     
     @MainActor
-    static func replaceDollarEnclosedStrings(in input: String) -> String {
+    static func replaceDollarEnclosedStrings(in input: String, withColor color: UIColor?) -> String {
         let regexPattern = "\\$(.*?)\\$"
         let regex = try! NSRegularExpression(pattern: regexPattern, options: [])
         
@@ -23,7 +23,7 @@ class LatexParser {
         for match in matches.reversed() {
             if let range = Range(match.range(at: 1), in: input) {
                 let capturedString = String(input[range])
-                let replacement = "![latex](\(self.parseLatexFromString(capturedString) ?? ""))"
+                let replacement = "![latex](\(self.parseLatexFromString(capturedString, color: color) ?? ""))"
                 output = output.replacingCharacters(in: Range(match.range, in: output)!, with: replacement)
             }
         }
@@ -35,10 +35,13 @@ class LatexParser {
     /// Parses a Latex image from a sring and safes it to the file system.
     /// - Parameter string: The latex string.
     /// - Returns: The file name.
-    static func parseLatexFromString(_ string: String) -> String? {
+    static func parseLatexFromString(_ string: String, color: UIColor?) -> String? {
         let renderer = ImageRenderer(content: LaTeX("$\(string)$"))
         renderer.scale = 3
-        guard let uiImage = renderer.uiImage else { return nil }
+        guard var uiImage = renderer.uiImage else { return nil }
+        if let color = color, let image = uiImage.image(withNewColor: color) {
+            uiImage = image
+        }
         return self.safeToFileSystem(uiImage: uiImage)
     }
     
@@ -60,5 +63,33 @@ class LatexParser {
             
         }
         return filePath
+    }
+}
+
+extension UIImage {
+    func image(withNewColor color: UIColor) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
+        defer { UIGraphicsEndImageContext() }
+        
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        guard let cgImage = self.cgImage else { return nil }
+        
+        color.setFill()
+        
+        context.translateBy(x: 0, y: self.size.height)
+        context.scaleBy(x: 1.0, y: -1.0)
+        context.setBlendMode(.normal)
+        
+        let rect = CGRect(origin: .zero, size: self.size)
+        context.clip(to: rect, mask: cgImage)
+        context.fill(rect)
+        
+        context.setBlendMode(.sourceIn)
+        context.addRect(rect)
+        context.drawPath(using: .fill)
+        
+        let coloredImg = UIGraphicsGetImageFromCurrentImageContext()
+        
+        return coloredImg
     }
 }
