@@ -99,11 +99,16 @@ extension AttributedString {
         var output = self
         
         for run in output.runs {
-            guard let fontProperties = run.fontProperties else {
-                continue
+            if let fontProperties = run.fontProperties {
+                output[run.range].font = UIFont.withProperties(fontProperties)
+                output[run.range].fontProperties = nil
             }
-            output[run.range].font = UIFont.withProperties(fontProperties)
-            output[run.range].fontProperties = nil
+            if let foregroundColor = run.swiftUI.foregroundColor {
+                output[run.range].foregroundColor = UIColor(foregroundColor)
+            }
+            if let backgroundColor = run.swiftUI.backgroundColor {
+                output[run.range].backgroundColor = UIColor(backgroundColor)
+            }
         }
         
         return output
